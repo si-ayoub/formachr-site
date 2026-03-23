@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server"
 import { Resend } from "resend"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+export const dynamic = "force-dynamic"
+
 const RECIPIENT = process.env.LEAD_RECIPIENT_EMAIL || "2adevellopment@gmail.com"
 
 interface LeadData {
@@ -33,6 +34,7 @@ const FORMAT_LABELS: Record<string, string> = {
 
 export async function POST(request: NextRequest) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY || "placeholder")
     const body = (await request.json()) as LeadData
 
     if (!body.nom || !body.telephone || !body.ville || !body.typeEtablissement) {
