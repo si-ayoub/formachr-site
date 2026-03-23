@@ -25,4 +25,6 @@ jobs:
         run: echo "${{ secrets.GOOGLE_SA_JSON }}" | base64 -d > /tmp/sa.json
 
       - name: Run Google Indexing
+        env:
+          GOOGLE_SA_PATH: /tmp/sa.json
         run: node scripts/google-indexing.mjs

@@ -14,7 +14,7 @@ import { google } from "googleapis";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 const LOG_FILE = resolve(ROOT, "google-indexing-log.json");
-const SA_PATH = "/tmp/sa.json";
+const SA_PATH = process.env.GOOGLE_SA_PATH || "/tmp/sa.json";
 const MAX_PER_DAY = 200;
 const COOLDOWN_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
 const SITEMAP_URL = "https://www.formachr.fr/sitemap.xml";
