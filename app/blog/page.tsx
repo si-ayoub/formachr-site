@@ -19,6 +19,16 @@ const ARTICLES = [
   { slug: "temperatures-conservation-aliments", titre: "Températures de conservation des aliments : guide complet restauration", temps: "9 min", categorie: "Guide pratique", emoji: "🌡️" },
   { slug: "iso-22000-vs-haccp-difference", titre: "ISO 22000 vs HACCP : quelles différences ? Laquelle choisir ?", temps: "8 min", categorie: "Certifications", emoji: "🏆" },
   { slug: "ouvrir-restaurant-formations-obligatoires", titre: "Ouvrir un restaurant : les 4 formations obligatoires à connaître", temps: "7 min", categorie: "Création", emoji: "🚀" },
+  { slug: "financer-formation-haccp-opco", titre: "Financer sa formation HACCP par l'OPCO — Guide complet 2026", temps: "10 min", categorie: "Financement", emoji: "💶" },
+  { slug: "formation-haccp-food-truck", titre: "Formation HACCP Food Truck — Obligations et guide pratique 2026", temps: "12 min", categorie: "Secteurs", emoji: "🚚" },
+  { slug: "plan-maitrise-sanitaire-pms", titre: "Plan de Maîtrise Sanitaire (PMS) — Guide complet et modèle 2026", temps: "14 min", categorie: "Guide HACCP", emoji: "📋" },
+  { slug: "controle-sanitaire-restaurant", titre: "Contrôle sanitaire restaurant — Préparer et réussir l'inspection 2026", temps: "13 min", categorie: "Réglementation", emoji: "⚖️" },
+  { slug: "formation-haccp-boucherie", titre: "Formation HACCP Boucherie Charcuterie — Obligations et Programme 2026", temps: "10 min", categorie: "Secteurs", emoji: "🥩" },
+  { slug: "permis-exploitation-guide-complet", titre: "Permis d'Exploitation 2026 — Guide Complet, Prix et Obligations", temps: "11 min", categorie: "Réglementation", emoji: "📜" },
+  { slug: "formation-haccp-prix-2026", titre: "Prix formation HACCP 2026 — Tarifs, comparatif et financement", temps: "10 min", categorie: "Financement", emoji: "💰" },
+  { slug: "formation-haccp-en-ligne-vs-presentiel", titre: "Formation HACCP en ligne vs présentiel — Comparatif complet 2026", temps: "10 min", categorie: "Guide HACCP", emoji: "📋" },
+  { slug: "allergenes-restauration-obligations", titre: "14 allergènes en restauration — Obligations légales et affichage 2026", temps: "12 min", categorie: "Réglementation", emoji: "⚠️" },
+  { slug: "formation-haccp-gratuite-pole-emploi", titre: "Formation HACCP gratuite Pôle Emploi — Guide France Travail 2026", temps: "11 min", categorie: "Financement", emoji: "💶" },
 ]
 
 export default function BlogPage() {
