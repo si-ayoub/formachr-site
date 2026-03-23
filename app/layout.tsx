@@ -3,6 +3,7 @@ import "./globals.css"
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, schemaOrganization, schemaWebSite } from "@/lib/seo"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
+import MusmapBanner from "@/components/MusmapBanner"
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans bg-white text-gray-900 antialiased">
         <Header />
         <main>{children}</main>
+        <div className="max-w-7xl mx-auto px-4"><MusmapBanner /></div>
         <Footer />
       </body>
     </html>

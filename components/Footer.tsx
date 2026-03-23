@@ -37,6 +37,15 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+          {/* Partenaires — Ecosystème */}
+          <div className="col-span-1 md:col-span-4 border-t border-gray-700 mt-4 pt-6">
+            <h4 className="text-white font-semibold mb-3">Nos partenaires</h4>
+            <div className="flex flex-wrap gap-4 text-sm">
+              <a href="https://musmap.com" target="_blank" rel="noopener" className="hover:text-white transition-colors">musmap.com — Annuaire restaurants halal</a>
+              <a href="https://hspot.fr" target="_blank" rel="noopener" className="hover:text-white transition-colors">H Spot — Application restaurants halal</a>
+              <a href="https://manager.hspot.app" target="_blank" rel="noopener" className="hover:text-white transition-colors">H Spot Manager — Gérez votre restaurant</a>
+            </div>
+          </div>
         <div className="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
           <p>© 2026 Formation HACCP France — Tous droits réservés</p>
           <div className="flex gap-4">
