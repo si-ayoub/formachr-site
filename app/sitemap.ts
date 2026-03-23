@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next"
 import { VILLES } from "@/data/villes"
+import { VILLES_5000 } from "@/data/villes-5000"
 import { SITE_URL } from "@/lib/seo"
 
 const SECTEURS = [
@@ -93,13 +94,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75
   }))
 
-  // ── Pages villes ────────────────────────────────────────────────────────
-  const villePages: MetadataRoute.Sitemap = VILLES.map(v => ({
-    url: `${SITE_URL}/formation-haccp-${v.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: v.population > 100000 ? 0.85 : v.population > 50000 ? 0.75 : 0.65
-  }))
+  // ── Pages villes (merged: villes.ts + villes-5000.ts, deduplicated) ────
+  const allSlugs = new Set<string>()
+  const villePages: MetadataRoute.Sitemap = []
+  for (const v of VILLES) {
+    allSlugs.add(v.slug)
+    villePages.push({
+      url: `${SITE_URL}/formation-haccp-${v.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: v.population > 100000 ? 0.85 : v.population > 50000 ? 0.75 : 0.65
+    })
+  }
+  for (const v of VILLES_5000) {
+    if (!allSlugs.has(v.slug)) {
+      allSlugs.add(v.slug)
+      villePages.push({
+        url: `${SITE_URL}/formation-haccp-${v.slug}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: v.population > 100000 ? 0.85 : v.population > 50000 ? 0.75 : 0.65
+      })
+    }
+  }
 
   // ── Pages régions (13 régions françaises) ──────────────────────────────
   const regionPages: MetadataRoute.Sitemap = REGIONS.map(r => ({
