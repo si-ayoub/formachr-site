@@ -25,13 +25,12 @@ function getAuthClient() {
   if (!existsSync(SA_PATH)) {
     throw new Error(`Service account not found at ${SA_PATH}`);
   }
-  const sa = JSON.parse(readFileSync(SA_PATH, "utf-8"));
-  return new google.auth.JWT(
-    sa.client_email,
-    null,
-    sa.private_key,
-    ["https://www.googleapis.com/auth/indexing"],
-  );
+  const keyData = JSON.parse(readFileSync(SA_PATH, "utf8"));
+  return new google.auth.JWT({
+    email: keyData.client_email,
+    key: keyData.private_key,
+    scopes: ["https://www.googleapis.com/auth/indexing"],
+  });
 }
 
 // ── Sitemap ─────────────────────────────────────────────────────────────────
