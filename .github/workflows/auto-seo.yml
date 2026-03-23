@@ -1,0 +1,19 @@
+name: Auto SEO — Ping IndexNow
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  ping-indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Ping IndexNow with all URLs
+        run: node scripts/ping-indexnow.mjs
