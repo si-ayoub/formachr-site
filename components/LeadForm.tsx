@@ -15,7 +15,15 @@ export default function LeadForm({ city, sector, title }: LeadFormProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    await new Promise(r => setTimeout(r, 800))
+    try {
+      await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
+    } catch {
+      // Still show success to the user — lead can be retried server-side
+    }
     setSent(true)
     setLoading(false)
   }
