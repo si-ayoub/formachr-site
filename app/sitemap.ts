@@ -5,7 +5,8 @@ import { SITE_URL } from "@/lib/seo"
 
 const SECTEURS = [
   "restaurant","snack","food-truck","boulangerie","boucherie-charcuterie",
-  "restauration-collective","hotel","creche","ephad","pizzeria","traiteur"
+  "restauration-collective","hotel","creche","ephad","pizzeria","traiteur",
+  "supermarche","camping","association"
 ]
 
 const FINANCEMENTS = ["cpf","opco","gratuite","pole-emploi","financement"]
@@ -86,6 +87,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/villes`, lastModified: now, changeFrequency: "weekly", priority: 0.90 },
     { url: `${SITE_URL}/devis`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE_URL}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.70 },
+    { url: `${SITE_URL}/financement-cpf`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${SITE_URL}/financement-opco`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${SITE_URL}/financement-pole-emploi`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${SITE_URL}/financement-gratuite`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },
   ]
 
   // ── Pages secteurs ──────────────────────────────────────────────────────
