@@ -66,6 +66,22 @@ export default function HomePage() {
           <div><LeadForm title="Devis gratuit — Réponse sous 24h" /></div>
         </div>
       </section>
+      {/* CHIFFRES CLÉS */}
+      <section className="py-10 px-4 bg-white border-b">
+        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          {[
+            { value: "1 340+", label: "Pages villes référencées" },
+            { value: "14h", label: "Formation HACCP obligatoire" },
+            { value: "24h", label: "Devis gratuit garanti" },
+            { value: "100%", label: "Organismes certifiés Qualiopi" },
+          ].map(s => (
+            <div key={s.label}>
+              <div className="text-3xl font-extrabold text-blue-700">{s.value}</div>
+              <div className="text-sm text-gray-500 mt-1">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
       {/* ALERTE LÉGALE */}
       <section className="bg-red-50 border-y border-red-100 py-5 px-4">
         <p className="text-center text-red-800 font-medium text-sm max-w-4xl mx-auto">⚠️ <strong>Obligation légale :</strong> Tout restaurant, snack, food truck ou boulangerie doit avoir au minimum <strong>un salarié formé</strong> à l'hygiène alimentaire. Absence = risque d'amende et fermeture administrative.</p>

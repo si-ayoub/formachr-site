@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server"
-import { Resend } from "resend"
 
 export const dynamic = "force-dynamic"
 
@@ -34,22 +33,27 @@ const FORMAT_LABELS: Record<string, string> = {
 
 export async function POST(request: NextRequest) {
   try {
-    const resend = new Resend(process.env.RESEND_API_KEY || "placeholder")
     const body = (await request.json()) as LeadData
 
     if (!body.nom || !body.telephone || !body.ville || !body.typeEtablissement) {
       return NextResponse.json({ error: "Champs obligatoires manquants" }, { status: 400 })
     }
 
+    const BREVO_API_KEY = process.env.BREVO_API_KEY
+    if (!BREVO_API_KEY) {
+      console.error("BREVO_API_KEY manquante")
+      return NextResponse.json({ error: "Configuration manquante" }, { status: 500 })
+    }
+
     const typeLabel = TYPE_LABELS[body.typeEtablissement] || body.typeEtablissement
     const formatLabel = body.format ? (FORMAT_LABELS[body.format] || body.format) : "Non précisé"
     const now = new Date().toLocaleString("fr-FR", { timeZone: "Europe/Paris" })
 
-    await resend.emails.send({
-      from: "FormaCHR Leads <leads@formachr.fr>",
-      to: RECIPIENT,
+    const emailData = {
+      sender: { name: "FormaCHR Leads", email: "leads@formachr.fr" },
+      to: [{ email: RECIPIENT, name: "Ayoub — 2A Digital" }],
       subject: `🎯 Nouveau lead HACCP — ${body.ville} — ${typeLabel}`,
-      html: `
+      htmlContent: `
         <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
           <div style="background:#1e3a8a;color:white;padding:24px;border-radius:12px 12px 0 0">
             <h1 style="margin:0;font-size:20px">🎯 Nouveau lead Formation HACCP</h1>
@@ -92,7 +96,22 @@ export async function POST(request: NextRequest) {
           </div>
         </div>
       `,
+    }
+
+    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "api-key": BREVO_API_KEY,
+      },
+      body: JSON.stringify(emailData),
     })
+
+    if (!response.ok) {
+      const error = await response.text()
+      console.error("Brevo error:", error)
+      return NextResponse.json({ error: "Erreur lors de l'envoi" }, { status: 500 })
+    }
 
     return NextResponse.json({ ok: true })
   } catch (error) {

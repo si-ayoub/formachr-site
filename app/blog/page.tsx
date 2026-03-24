@@ -29,6 +29,16 @@ const ARTICLES = [
   { slug: "formation-haccp-en-ligne-vs-presentiel", titre: "Formation HACCP en ligne vs présentiel — Comparatif complet 2026", temps: "10 min", categorie: "Guide HACCP", emoji: "📋" },
   { slug: "allergenes-restauration-obligations", titre: "14 allergènes en restauration — Obligations légales et affichage 2026", temps: "12 min", categorie: "Réglementation", emoji: "⚠️" },
   { slug: "formation-haccp-gratuite-pole-emploi", titre: "Formation HACCP gratuite Pôle Emploi — Guide France Travail 2026", temps: "11 min", categorie: "Financement", emoji: "💶" },
+  { slug: "formation-haccp-boulangerie", titre: "Formation HACCP Boulangerie — Obligations et Guide Complet 2026", temps: "10 min", categorie: "Secteurs", emoji: "🥐" },
+  { slug: "formation-haccp-traiteur", titre: "Formation HACCP Traiteur — Règles d'Hygiène pour Traiteurs 2026", temps: "10 min", categorie: "Secteurs", emoji: "🍽️" },
+  { slug: "formation-haccp-ehpad", titre: "Formation HACCP EHPAD — Hygiène Alimentaire en Maison de Retraite", temps: "10 min", categorie: "Secteurs", emoji: "🏥" },
+  { slug: "formation-haccp-creche", titre: "Formation HACCP Crèche — Alimentation Nourrissons et Jeunes Enfants", temps: "10 min", categorie: "Secteurs", emoji: "👶" },
+  { slug: "formation-haccp-pizzeria", titre: "Formation HACCP Pizzeria — Guide Hygiène pour Pizzaïolos 2026", temps: "10 min", categorie: "Secteurs", emoji: "🍕" },
+  { slug: "reglementation-haccp-2026", titre: "Réglementation HACCP 2026 — Nouvelles Obligations Restaurateurs", temps: "12 min", categorie: "Réglementation", emoji: "⚖️" },
+  { slug: "cout-formation-haccp", titre: "Combien Coûte une Formation HACCP ? Prix et Financements 2026", temps: "8 min", categorie: "Financement", emoji: "💰" },
+  { slug: "formation-haccp-en-ligne-gratuite", titre: "Formation HACCP En Ligne Gratuite — Est-ce Possible en 2026 ?", temps: "9 min", categorie: "Financement", emoji: "💻" },
+  { slug: "haccp-restauration-collective", titre: "HACCP Restauration Collective — Obligations Cantines et Self-Service", temps: "11 min", categorie: "Secteurs", emoji: "🏫" },
+  { slug: "formation-haccp-ile-de-france", titre: "Formation HACCP Île-de-France — Paris, Versailles, Saint-Denis 2026", temps: "10 min", categorie: "Régions", emoji: "🗼" },
 ]
 
 export default function BlogPage() {

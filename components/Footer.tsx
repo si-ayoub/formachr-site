@@ -46,6 +46,9 @@ export default function Footer() {
               <a href="https://manager.hspot.app" target="_blank" rel="noopener" className="hover:text-white transition-colors">H Spot Manager — Gérez votre restaurant</a>
             </div>
           </div>
+        <div className="text-center mt-6 text-sm text-gray-400">
+            Vous cherchez un restaurant halal ? <a href="https://musmap.com" target="_blank" rel="noopener" className="text-blue-400 hover:text-white transition-colors">musmap.com</a>
+          </div>
         <div className="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
           <p>© 2026 Formation HACCP France — Tous droits réservés</p>
           <div className="flex gap-4">
