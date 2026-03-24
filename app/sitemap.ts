@@ -98,6 +98,14 @@ const DEPARTEMENTS = [
   "92-hauts-de-seine","93-seine-saint-denis","94-val-de-marne","95-val-d-oise"
 ]
 
+const REGIONS_PAGES = [
+  "region-ile-de-france","region-auvergne-rhone-alpes","region-paca",
+  "region-occitanie","region-nouvelle-aquitaine","region-hauts-de-france",
+  "region-grand-est","region-pays-de-la-loire","region-normandie",
+  "region-bretagne","region-bourgogne-franche-comte","region-centre-val-de-loire",
+  "region-corse"
+]
+
 const CROISEMENTS_SECTEURS = ["restaurant","snack","food-truck","boucherie","boulangerie"]
 const CROISEMENTS_VILLES = [
   "paris","lyon","marseille","toulouse","bordeaux",
@@ -187,6 +195,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.80
   }))
 
+  // ── Pages régions détaillées (13 régions françaises) ───────────────────
+  const regionDetailPages: MetadataRoute.Sitemap = REGIONS_PAGES.map(r => ({
+    url: `${SITE_URL}/formation-haccp-${r}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.85
+  }))
+
   // ── Pages croisements ville × secteur (50 pages) ──────────────────────
   const croisementPages: MetadataRoute.Sitemap = CROISEMENTS_SECTEURS.flatMap(s =>
     CROISEMENTS_VILLES.map(v => ({
@@ -212,6 +228,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...formatPages,
     ...villePages,
     ...regionPages,
+    ...regionDetailPages,
     ...departementPages,
     ...croisementPages,
     ...blogPages,
