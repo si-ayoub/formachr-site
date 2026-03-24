@@ -27,6 +27,11 @@ const SECTEURS = [
   { icon: "🏫", label: "Collectivité", href: "/formation-haccp-restauration-collective" },
   { icon: "🏨", label: "Hôtel", href: "/formation-haccp-hotel" },
   { icon: "👶", label: "Crèche / EHPAD", href: "/formation-haccp-creche" },
+  { icon: "🍕", label: "Pizzeria", href: "/formation-haccp-pizzeria" },
+  { icon: "🧑‍🍳", label: "Traiteur", href: "/formation-haccp-traiteur" },
+  { icon: "🛒", label: "Supermarché", href: "/formation-haccp-supermarche" },
+  { icon: "⛺", label: "Camping", href: "/formation-haccp-camping" },
+  { icon: "🤝", label: "Association", href: "/formation-haccp-association" },
 ]
 
 const FORMATIONS = [
@@ -41,6 +46,10 @@ const GRANDES_VILLES = [
   { nom: "Toulouse", slug: "toulouse" }, { nom: "Bordeaux", slug: "bordeaux" }, { nom: "Lille", slug: "lille" },
   { nom: "Nantes", slug: "nantes" }, { nom: "Strasbourg", slug: "strasbourg" }, { nom: "Nice", slug: "nice" },
   { nom: "Rennes", slug: "rennes" }, { nom: "Grenoble", slug: "grenoble" }, { nom: "Montpellier", slug: "montpellier" },
+  { nom: "Toulon", slug: "toulon" }, { nom: "Dijon", slug: "dijon" },
+  { nom: "Angers", slug: "angers" }, { nom: "Reims", slug: "reims" },
+  { nom: "Rouen", slug: "rouen" }, { nom: "Caen", slug: "caen" },
+  { nom: "Saint-Étienne", slug: "saint-etienne" }, { nom: "Metz", slug: "metz" },
 ]
 
 export default function HomePage() {
@@ -149,6 +158,28 @@ export default function HomePage() {
             </table>
           </div>
           <p className="text-center text-sm text-gray-500 mt-4">💡 <Link href="/formation-haccp-financement" className="text-blue-600 hover:underline">Comment financer votre formation HACCP à 100% ? →</Link></p>
+        </div>
+      </section>
+      {/* FINANCEMENT */}
+      <section className="py-16 px-4 bg-white border-b">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-2">Financez votre formation HACCP</h2>
+          <p className="text-center text-gray-500 mb-10">Jusqu&apos;à 100% de prise en charge selon votre situation</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "CPF", desc: "Utilisez votre Compte Personnel de Formation pour financer votre HACCP", href: "/financement-cpf", badge: "Populaire" },
+              { title: "OPCO", desc: "AKTO, OCAPIAT ou OPCO EP prennent en charge 100% pour les salariés CHR", href: "/financement-opco", badge: "100% pris en charge" },
+              { title: "France Travail", desc: "L'AIF finance votre formation si vous êtes demandeur d'emploi", href: "/financement-pole-emploi", badge: "Demandeurs d'emploi" },
+              { title: "Formation gratuite", desc: "Découvrez toutes les solutions pour une formation HACCP à 0€", href: "/financement-gratuite", badge: "0€" },
+            ].map(f => (
+              <Link key={f.href} href={f.href} className="group border rounded-xl p-6 hover:border-blue-400 hover:shadow-md transition-all">
+                <div className="inline-block text-xs font-bold px-2 py-1 rounded-full mb-3 bg-green-100 text-green-700">{f.badge}</div>
+                <h3 className="font-bold mb-2 group-hover:text-blue-700">{f.title}</h3>
+                <p className="text-sm text-gray-500">{f.desc}</p>
+                <div className="mt-4 text-blue-600 text-sm font-medium">En savoir plus →</div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
       {/* VILLES */}
