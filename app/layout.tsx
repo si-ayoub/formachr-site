@@ -12,6 +12,21 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: { canonical: SITE_URL },
   verification: { google: "dc9de31b5dca6a81" },
+  openGraph: {
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    images: [{ url: `${SITE_URL}/og-image.svg`, width: 1200, height: 630 }],
+    type: "website",
+    locale: "fr_FR",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    images: [`${SITE_URL}/og-image.svg`],
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
