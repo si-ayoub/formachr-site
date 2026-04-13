@@ -9,8 +9,8 @@ const SECTEURS = [
   "supermarche","camping","association"
 ]
 
-const FINANCEMENTS = ["cpf","opco","gratuite","pole-emploi","financement"]
-const FORMATS = ["en-ligne","presentiel","intra-entreprise"]
+const FINANCEMENTS = ["cpf"]
+const FORMATS: string[] = []
 
 const BLOG_SLUGS = [
   "7-principes-haccp",
@@ -124,6 +124,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/plan-maitrise-sanitaire`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },
     { url: `${SITE_URL}/villes`, lastModified: now, changeFrequency: "weekly", priority: 0.90 },
     { url: `${SITE_URL}/devis`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${SITE_URL}/calculateur-prix`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },
     { url: `${SITE_URL}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.70 },
     { url: `${SITE_URL}/financement-cpf`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },
     { url: `${SITE_URL}/financement-opco`, lastModified: now, changeFrequency: "monthly", priority: 0.80 },
