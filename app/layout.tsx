@@ -10,14 +10,15 @@ export const metadata: Metadata = {
   title: { default: SITE_NAME, template: "%s | " + SITE_NAME },
   description: SITE_DESCRIPTION,
   robots: { index: true, follow: true },
-  alternates: { canonical: SITE_URL },
+  // Pas de canonical racine ici : il serait hérité par toutes les pages sans
+  // alternates propre et les ferait toutes pointer vers la home.
   verification: { google: "dc9de31b5dca6a81" },
   openGraph: {
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
-    url: SITE_URL,
     siteName: SITE_NAME,
-    images: [{ url: `${SITE_URL}/og-image.svg`, width: 1200, height: 630 }],
+    // PNG 1200×630 : les .svg sont ignorés par WhatsApp/Facebook
+    images: [{ url: `${SITE_URL}/og-formation-haccp.png`, width: 1200, height: 630 }],
     type: "website",
     locale: "fr_FR",
   },
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
-    images: [`${SITE_URL}/og-image.svg`],
+    images: [`${SITE_URL}/og-formation-haccp.png`],
   },
 }
 

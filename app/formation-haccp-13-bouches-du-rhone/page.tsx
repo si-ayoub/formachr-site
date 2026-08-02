@@ -15,6 +15,9 @@ const FAQ = [
   { question: "Où trouver une formation HACCP dans le Bouches-du-Rhône ?", answer: "Des sessions sont organisées régulièrement à Marseille, Aix-en-Provence, Arles, Martigues, Salon-de-Provence. Des formations en ligne sont également disponibles." },
   { question: "Quelle est la DRAAF compétente pour le Bouches-du-Rhône ?", answer: "Le département Bouches-du-Rhône (13) dépend de la DRAAF PACA pour l&apos;agrément des organismes de formation en hygiène alimentaire." },
   { question: "Combien de restaurants sont concernés dans le Bouches-du-Rhône ?", answer: "Le département Bouches-du-Rhône compte environ 5 500 établissements de restauration commerciale soumis à l&apos;obligation de formation HACCP." },
+  { question: "La chaîne du froid est-elle un enjeu particulier à Marseille ?", answer: "Oui, le port de Marseille et ses marchés aux poissons imposent une vigilance particulière sur la chaîne du froid. Les restaurants du Vieux-Port manipulant des produits de la mer frais doivent maîtriser parfaitement les températures de conservation et de transport." },
+  { question: "Les restaurants du Vieux-Port sont-ils plus contrôlés ?", answer: "Les restaurants du Vieux-Port, de la Canebière et des zones touristiques font l&apos;objet d&apos;inspections régulières de la DDPP des Bouches-du-Rhône, notamment pendant la haute saison estivale où l&apos;afflux touristique multiplie les risques." },
+  { question: "Peut-on suivre la formation HACCP à Aix-en-Provence ?", answer: "Oui, des sessions de formation HACCP sont régulièrement organisées à Aix-en-Provence, en plus de Marseille. Aix-en-Provence, ville universitaire et touristique, dispose de plusieurs organismes de formation agréés DRAAF PACA." },
 ]
 
 export default function Page() {
@@ -63,7 +66,7 @@ export default function Page() {
               <span className="text-2xl font-bold">Hygiène Alimentaire Obligatoire 2026</span>
             </h1>
             <p className="text-blue-100 text-base mb-5 leading-relaxed">
-              Les Bouches-du-Rhône, avec Marseille comme préfecture, sont le département le plus peuplé de la région PACA. Avec plus de 5 500 établissements de restauration et la célèbre bouillabaisse marseillaise, la formation HACCP est essentielle pour les professionnels du département.
+              Les Bouches-du-Rh&ocirc;ne, avec Marseille comme capitale r&eacute;gionale, constituent un d&eacute;partement dynamique pour la restauration. Le port de Marseille et ses march&eacute;s imposent une vigilance particuli&egrave;re sur la cha&icirc;ne du froid. Les restaurants du Vieux-Port, de la Canebi&egrave;re et des quartiers nord font l&apos;objet d&apos;inspections r&eacute;guli&egrave;res de la DDPP.
             </p>
             <div className="grid grid-cols-2 gap-3 text-sm">
               {[
@@ -104,8 +107,17 @@ export default function Page() {
                 <li><Link href="/formation-haccp-aix-en-provence" className="text-blue-600 hover:text-blue-800 font-medium underline">Aix-en-Provence</Link></li>
                 <li><Link href="/formation-haccp-arles" className="text-blue-600 hover:text-blue-800 font-medium underline">Arles</Link></li>
                 <li><Link href="/formation-haccp-martigues" className="text-blue-600 hover:text-blue-800 font-medium underline">Martigues</Link></li>
-                <li><Link href="/formation-haccp-salon-de-provence" className="text-blue-600 hover:text-blue-800 font-medium underline">Salon-de-Provence</Link></li>
+                <li><Link href="/formation-haccp-aubagne" className="text-blue-600 hover:text-blue-800 font-medium underline">Aubagne</Link></li>
           </ul>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 mb-4">
+            <a href="https://musmap.com/fr/restaurants/marseille" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 font-medium px-5 py-3 rounded-xl hover:bg-green-100 transition-colors">
+              🗺️ Voir les restaurants &agrave; Marseille sur MusMap
+            </a>
+            <Link href="/formation-haccp-provence-alpes-cote-d-azur" className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-800 font-medium px-5 py-3 rounded-xl hover:bg-blue-100 transition-colors">
+              🏛️ Formation HACCP en PACA (r&eacute;gion)
+            </Link>
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             {[

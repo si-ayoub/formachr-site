@@ -15,6 +15,9 @@ const FAQ = [
   { question: "Où trouver une formation HACCP dans le Bas-Rhin ?", answer: "Des sessions sont organisées régulièrement à Strasbourg, Haguenau, Schiltigheim, Illkirch-Graffenstaden, Sélestat. Des formations en ligne sont également disponibles." },
   { question: "Quelle est la DRAAF compétente pour le Bas-Rhin ?", answer: "Le département Bas-Rhin (67) dépend de la DRAAF Grand Est pour l&apos;agrément des organismes de formation en hygiène alimentaire." },
   { question: "Combien de restaurants sont concernés dans le Bas-Rhin ?", answer: "Le département Bas-Rhin compte environ 2 000 établissements de restauration commerciale soumis à l&apos;obligation de formation HACCP." },
+  { question: "Les winstubs alsaciennes ont-elles des obligations HACCP spécifiques ?", answer: "Les winstubs sont soumises aux mêmes obligations HACCP que tout restaurant. La tradition alsacienne de la choucroute, du baeckeoffe et de la flammekueche nécessite une maîtrise rigoureuse des températures de cuisson et de conservation, abordée dans la formation de 14 heures." },
+  { question: "Les contrôles HACCP sont-ils renforcés pendant le marché de Noël de Strasbourg ?", answer: "Oui, le Christkindelsmärik de Strasbourg, plus grand marché de Noël de France, génère une activité de restauration intense en décembre. Les contrôles HACCP y sont particulièrement rigoureux pour les stands de restauration et les winstubs environnantes." },
+  { question: "La proximité des institutions européennes influence-t-elle les standards HACCP à Strasbourg ?", answer: "Strasbourg, capitale européenne, impose des standards d&apos;hygiène alimentaire en phase avec les exigences européennes. Les restaurants accueillant des délégations internationales appliquent souvent des normes plus strictes que le minimum légal." },
 ]
 
 export default function Page() {
@@ -63,7 +66,7 @@ export default function Page() {
               <span className="text-2xl font-bold">Hygiène Alimentaire Obligatoire 2026</span>
             </h1>
             <p className="text-blue-100 text-base mb-5 leading-relaxed">
-              Le Bas-Rhin, avec Strasbourg capitale européenne, est le cœur de l&apos;Alsace gastronomique. Winstubs, restaurants de choucroute, brasseries : plus de 2 000 établissements doivent justifier de la formation HACCP dans le département.
+              Le Bas-Rhin, avec Strasbourg capitale europ&eacute;enne, impose des standards d&apos;hygi&egrave;ne alimentaire en phase avec les exigences europ&eacute;ennes. La tradition alsacienne des winstubs et restaurants de choucroute c&ocirc;toie une offre internationale li&eacute;e aux institutions europ&eacute;ennes. Les contr&ocirc;les HACCP y sont particuli&egrave;rement rigoureux.
             </p>
             <div className="grid grid-cols-2 gap-3 text-sm">
               {[
@@ -104,8 +107,17 @@ export default function Page() {
                 <li><Link href="/formation-haccp-haguenau" className="text-blue-600 hover:text-blue-800 font-medium underline">Haguenau</Link></li>
                 <li><Link href="/formation-haccp-schiltigheim" className="text-blue-600 hover:text-blue-800 font-medium underline">Schiltigheim</Link></li>
                 <li><Link href="/formation-haccp-illkirch-graffenstaden" className="text-blue-600 hover:text-blue-800 font-medium underline">Illkirch-Graffenstaden</Link></li>
-                <li><Link href="/formation-haccp-selestat" className="text-blue-600 hover:text-blue-800 font-medium underline">Sélestat</Link></li>
+                <li><Link href="/formation-haccp-illkirch-graffenstaden" className="text-blue-600 hover:text-blue-800 font-medium underline">Illkirch</Link></li>
           </ul>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 mb-4">
+            <a href="https://musmap.com/fr/restaurants/strasbourg" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 font-medium px-5 py-3 rounded-xl hover:bg-green-100 transition-colors">
+              🗺️ Voir les restaurants &agrave; Strasbourg sur MusMap
+            </a>
+            <Link href="/formation-haccp-grand-est" className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-800 font-medium px-5 py-3 rounded-xl hover:bg-blue-100 transition-colors">
+              🏛️ Formation HACCP en Grand Est (r&eacute;gion)
+            </Link>
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             {[

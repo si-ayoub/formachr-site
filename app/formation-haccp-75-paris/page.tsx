@@ -15,6 +15,9 @@ const FAQ = [
   { question: "Où trouver une formation HACCP dans le Paris ?", answer: "Des sessions sont organisées régulièrement à Paris, Boulogne-Billancourt, Saint-Denis, Montreuil, Nanterre. Des formations en ligne sont également disponibles." },
   { question: "Quelle est la DRAAF compétente pour le Paris ?", answer: "Le département Paris (75) dépend de la DRAAF Île-de-France pour l&apos;agrément des organismes de formation en hygiène alimentaire." },
   { question: "Combien de restaurants sont concernés dans le Paris ?", answer: "Le département Paris compte environ 15 000 établissements de restauration commerciale soumis à l&apos;obligation de formation HACCP." },
+  { question: "Quels arrondissements de Paris concentrent le plus de contrôles sanitaires ?", answer: "Les arrondissements touristiques (1er, 8e, 18e) concentrent la majorité des contrôles sanitaires de la DDPP. Les zones à forte densité de restaurants comme le Marais (3e-4e), Saint-Germain (6e) et Montmartre (18e) sont particulièrement surveillées." },
+  { question: "Peut-on suivre la formation HACCP le week-end à Paris ?", answer: "Oui, de nombreux organismes parisiens proposent des formations HACCP le samedi et le dimanche pour s&apos;adapter aux contraintes horaires des restaurateurs qui ne peuvent pas fermer en semaine." },
+  { question: "La formation HACCP est-elle la même pour un restaurant étoilé et un fast-food à Paris ?", answer: "Oui, la formation HACCP de 14 heures est identique quel que soit le type d&apos;établissement. Cependant, les restaurants étoilés et les établissements haut de gamme parisiens complètent souvent cette formation par des modules spécialisés sur la gestion des produits nobles et la traçabilité." },
 ]
 
 export default function Page() {
@@ -63,7 +66,7 @@ export default function Page() {
               <span className="text-2xl font-bold">Hygiène Alimentaire Obligatoire 2026</span>
             </h1>
             <p className="text-blue-100 text-base mb-5 leading-relaxed">
-              Paris, capitale de la France et de la gastronomie mondiale, concentre plus de 15 000 établissements de restauration commerciale. Des bistrots de quartier aux restaurants étoilés, des food trucks aux dark kitchens, la formation HACCP est une obligation incontournable pour tous les professionnels parisiens de la restauration.
+              Paris, capitale fran&ccedil;aise, concentre une offre de formation HACCP exceptionnelle. Avec plus de 15 000 &eacute;tablissements de restauration dans la capitale, l&apos;obligation l&eacute;gale de formation HACCP concerne des dizaines de milliers de professionnels. Les arrondissements touristiques (1er, 8e, 18e) concentrent la majorit&eacute; des contr&ocirc;les sanitaires. Les organismes parisiens proposent des formations en pr&eacute;sentiel, souvent le week-end pour s&apos;adapter aux contraintes horaires des restaurateurs.
             </p>
             <div className="grid grid-cols-2 gap-3 text-sm">
               {[
@@ -104,8 +107,17 @@ export default function Page() {
                 <li><Link href="/formation-haccp-boulogne-billancourt" className="text-blue-600 hover:text-blue-800 font-medium underline">Boulogne-Billancourt</Link></li>
                 <li><Link href="/formation-haccp-saint-denis" className="text-blue-600 hover:text-blue-800 font-medium underline">Saint-Denis</Link></li>
                 <li><Link href="/formation-haccp-montreuil" className="text-blue-600 hover:text-blue-800 font-medium underline">Montreuil</Link></li>
-                <li><Link href="/formation-haccp-nanterre" className="text-blue-600 hover:text-blue-800 font-medium underline">Nanterre</Link></li>
+                <li><Link href="/formation-haccp-vincennes" className="text-blue-600 hover:text-blue-800 font-medium underline">Vincennes</Link></li>
           </ul>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 mb-4">
+            <a href="https://musmap.com/fr/restaurants/paris" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 font-medium px-5 py-3 rounded-xl hover:bg-green-100 transition-colors">
+              🗺️ Voir les restaurants &agrave; Paris sur MusMap
+            </a>
+            <Link href="/formation-haccp-ile-de-france" className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-800 font-medium px-5 py-3 rounded-xl hover:bg-blue-100 transition-colors">
+              🏛️ Formation HACCP en &Icirc;le-de-France (r&eacute;gion)
+            </Link>
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             {[

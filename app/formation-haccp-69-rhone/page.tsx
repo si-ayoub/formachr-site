@@ -15,6 +15,9 @@ const FAQ = [
   { question: "Où trouver une formation HACCP dans le Rhône ?", answer: "Des sessions sont organisées régulièrement à Lyon, Villeurbanne, Vénissieux, Caluire-et-Cuire, Saint-Priest. Des formations en ligne sont également disponibles." },
   { question: "Quelle est la DRAAF compétente pour le Rhône ?", answer: "Le département Rhône (69) dépend de la DRAAF Auvergne-Rhône-Alpes pour l&apos;agrément des organismes de formation en hygiène alimentaire." },
   { question: "Combien de restaurants sont concernés dans le Rhône ?", answer: "Le département Rhône compte environ 3 500 établissements de restauration commerciale soumis à l&apos;obligation de formation HACCP." },
+  { question: "Les bouchons lyonnais ont-ils des obligations HACCP spécifiques ?", answer: "Les bouchons lyonnais sont soumis aux mêmes obligations HACCP que tout restaurant. Cependant, la réputation culinaire de Lyon impose des standards d&apos;hygiène élevés et la DDPP du Rhône effectue des contrôles fréquents dans ces établissements emblématiques." },
+  { question: "Où se déroulent les formations HACCP dans la métropole de Lyon ?", answer: "Les formations HACCP sont proposées dans toute la métropole lyonnaise : centre-ville de Lyon (Presqu&apos;île, Part-Dieu), Villeurbanne, Vénissieux et Bron. Des sessions sont disponibles chaque semaine." },
+  { question: "La formation HACCP est-elle adaptée aux restaurants étoilés lyonnais ?", answer: "La formation HACCP de 14 heures couvre les fondamentaux obligatoires pour tous les établissements. Les restaurants étoilés de Lyon, héritiers de la tradition Paul Bocuse, complètent souvent cette base par des formations avancées sur la traçabilité et la gestion des produits d&apos;exception." },
 ]
 
 export default function Page() {
@@ -63,7 +66,7 @@ export default function Page() {
               <span className="text-2xl font-bold">Hygiène Alimentaire Obligatoire 2026</span>
             </h1>
             <p className="text-blue-100 text-base mb-5 leading-relaxed">
-              Le Rhône, avec Lyon comme préfecture, est un département emblématique de la gastronomie française. Les bouchons lyonnais, les restaurants étoilés et les halles Paul Bocuse font du Rhône un territoire où la formation HACCP revêt une importance particulière.
+              Le Rh&ocirc;ne, d&eacute;partement de la gastronomie fran&ccedil;aise avec Lyon en t&ecirc;te, exige une ma&icirc;trise parfaite des normes HACCP. La r&eacute;putation culinaire de Lyon impose des standards d&apos;hygi&egrave;ne &eacute;lev&eacute;s, avec des contr&ocirc;les DDPP fr&eacute;quents dans les bouchons et restaurants &eacute;toil&eacute;s. Les formations HACCP sont tr&egrave;s demand&eacute;es par les nombreux &eacute;tablissements de la Presqu&apos;&icirc;le et de la Part-Dieu.
             </p>
             <div className="grid grid-cols-2 gap-3 text-sm">
               {[
@@ -104,8 +107,17 @@ export default function Page() {
                 <li><Link href="/formation-haccp-villeurbanne" className="text-blue-600 hover:text-blue-800 font-medium underline">Villeurbanne</Link></li>
                 <li><Link href="/formation-haccp-venissieux" className="text-blue-600 hover:text-blue-800 font-medium underline">Vénissieux</Link></li>
                 <li><Link href="/formation-haccp-caluire-et-cuire" className="text-blue-600 hover:text-blue-800 font-medium underline">Caluire-et-Cuire</Link></li>
-                <li><Link href="/formation-haccp-saint-priest" className="text-blue-600 hover:text-blue-800 font-medium underline">Saint-Priest</Link></li>
+                <li><Link href="/formation-haccp-bron" className="text-blue-600 hover:text-blue-800 font-medium underline">Bron</Link></li>
           </ul>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 mb-4">
+            <a href="https://musmap.com/fr/restaurants/lyon" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 font-medium px-5 py-3 rounded-xl hover:bg-green-100 transition-colors">
+              🗺️ Voir les restaurants &agrave; Lyon sur MusMap
+            </a>
+            <Link href="/formation-haccp-auvergne-rhone-alpes" className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-800 font-medium px-5 py-3 rounded-xl hover:bg-blue-100 transition-colors">
+              🏛️ Formation HACCP en Auvergne-Rh&ocirc;ne-Alpes (r&eacute;gion)
+            </Link>
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             {[

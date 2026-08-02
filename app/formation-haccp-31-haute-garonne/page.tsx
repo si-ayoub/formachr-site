@@ -15,6 +15,9 @@ const FAQ = [
   { question: "Où trouver une formation HACCP dans le Haute-Garonne ?", answer: "Des sessions sont organisées régulièrement à Toulouse, Colomiers, Tournefeuille, Blagnac, Muret. Des formations en ligne sont également disponibles." },
   { question: "Quelle est la DRAAF compétente pour le Haute-Garonne ?", answer: "Le département Haute-Garonne (31) dépend de la DRAAF Occitanie pour l&apos;agrément des organismes de formation en hygiène alimentaire." },
   { question: "Combien de restaurants sont concernés dans le Haute-Garonne ?", answer: "Le département Haute-Garonne compte environ 3 200 établissements de restauration commerciale soumis à l&apos;obligation de formation HACCP." },
+  { question: "Les snacks et kebabs du quartier étudiant de Toulouse sont-ils soumis à la formation HACCP ?", answer: "Oui, tous les établissements de restauration rapide, snacks et kebabs sont soumis à l&apos;obligation de formation HACCP. La forte population étudiante de Toulouse génère de nombreuses ouvertures de ce type d&apos;établissements, tous concernés dès le premier jour." },
+  { question: "Les contrôles DDPP sont-ils fréquents dans le centre de Toulouse ?", answer: "Oui, les contrôles DDPP sont réguliers dans le centre de Toulouse, notamment dans le quartier des Carmes, la place du Capitole et la rue Saint-Rome, qui concentrent une densité importante de restaurants et snacks." },
+  { question: "Peut-on financer la formation HACCP via l&apos;OPCO pour un restaurant de cassoulet à Toulouse ?", answer: "Oui, les restaurants traditionnels de cassoulet et de cuisine du Sud-Ouest à Toulouse peuvent bénéficier du financement OPCO AKTO pour la formation HACCP de leurs salariés du secteur CHR, avec une prise en charge pouvant aller jusqu&apos;à 100%." },
 ]
 
 export default function Page() {
@@ -63,7 +66,7 @@ export default function Page() {
               <span className="text-2xl font-bold">Hygiène Alimentaire Obligatoire 2026</span>
             </h1>
             <p className="text-blue-100 text-base mb-5 leading-relaxed">
-              La Haute-Garonne, avec Toulouse la ville rose, est le département le plus dynamique d&apos;Occitanie. Ville étudiante, pôle aéronautique (Airbus) et capitale du cassoulet, Toulouse et son département comptent plus de 3 200 établissements de restauration soumis à la formation HACCP.
+              La Haute-Garonne, avec Toulouse ville rose, concentre une offre gastronomique vari&eacute;e autour du cassoulet, des restaurants &eacute;tudiants et de la cuisine du Sud-Ouest. La forte population &eacute;tudiante g&eacute;n&egrave;re de nombreuses ouvertures de restaurants et snacks soumis &agrave; l&apos;obligation HACCP. Les contr&ocirc;les DDPP sont r&eacute;guliers dans le centre de Toulouse.
             </p>
             <div className="grid grid-cols-2 gap-3 text-sm">
               {[
@@ -106,6 +109,15 @@ export default function Page() {
                 <li><Link href="/formation-haccp-blagnac" className="text-blue-600 hover:text-blue-800 font-medium underline">Blagnac</Link></li>
                 <li><Link href="/formation-haccp-muret" className="text-blue-600 hover:text-blue-800 font-medium underline">Muret</Link></li>
           </ul>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 mb-4">
+            <a href="https://musmap.com/fr/restaurants/toulouse" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 font-medium px-5 py-3 rounded-xl hover:bg-green-100 transition-colors">
+              🗺️ Voir les restaurants &agrave; Toulouse sur MusMap
+            </a>
+            <Link href="/formation-haccp-occitanie" className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-800 font-medium px-5 py-3 rounded-xl hover:bg-blue-100 transition-colors">
+              🏛️ Formation HACCP en Occitanie (r&eacute;gion)
+            </Link>
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             {[
