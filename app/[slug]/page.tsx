@@ -2,9 +2,16 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import LeadForm from "@/components/LeadForm"
-import { VILLES, VILLES_PAR_SLUG, type Ville } from "@/data/villes"
+import { VILLES, VILLES_PAR_SLUG } from "@/data/villes"
 import { VILLES_5000, VILLES_5000_PAR_SLUG, type Ville5000 } from "@/data/villes-5000"
 import { schemaCourse, schemaFAQ, schemaBreadcrumb, schemaLocalBusiness, SITE_URL } from "@/lib/seo"
+
+// Catch-all racine : Next ne supporte pas les segments partiellement dynamiques,
+// l'ancien dossier `formation-haccp-[slug]` était traité comme une URL LITTÉRALE
+// (d'où les 404 sur /formation-haccp-paris). Ici on capte tout segment inconnu
+// et on ne sert que ceux préfixés `formation-haccp-` correspondant à une ville.
+// Les dossiers littéraux (secteurs, départements, régions…) gardent la priorité.
+const PREFIX = "formation-haccp-"
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -25,7 +32,7 @@ interface MergedVille {
 }
 
 function slugifyRegion(r: string): string {
-  return r.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+  return r.normalize("NFD").replace(/[̀-ͯ]/g, "")
     .toLowerCase().replace(/['']/g, "-").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")
 }
 
@@ -42,12 +49,17 @@ function slugifyDept(numDept: string): string {
   return map[numDept] || ""
 }
 
+function villeSlugFrom(slug: string): string | null {
+  if (!slug.startsWith(PREFIX)) return null
+  return slug.slice(PREFIX.length)
+}
+
 // Build merged lookup: villes.ts data takes priority (has nbRestaurantsEstime)
-function getMergedVille(slug: string): MergedVille | null {
-  const original = VILLES_PAR_SLUG[slug]
+function getMergedVille(villeSlug: string): MergedVille | null {
+  const original = VILLES_PAR_SLUG[villeSlug]
   if (original) return original
 
-  const v5k = VILLES_5000_PAR_SLUG[slug]
+  const v5k = VILLES_5000_PAR_SLUG[villeSlug]
   if (!v5k) return null
 
   return {
@@ -64,17 +76,18 @@ function getNeighborCities(ville: MergedVille): Ville5000[] {
     .slice(0, 5)
 }
 
-// Generate all slugs from both sources (deduplicated)
+// Generate all slugs from both sources (deduplicated), prefixed
 export async function generateStaticParams() {
   const slugs = new Set<string>()
   for (const v of VILLES) slugs.add(v.slug)
   for (const v of VILLES_5000) slugs.add(v.slug)
-  return Array.from(slugs).map(slug => ({ slug }))
+  return Array.from(slugs).map(slug => ({ slug: PREFIX + slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const ville = getMergedVille(slug)
+  const villeSlug = villeSlugFrom(slug)
+  const ville = villeSlug ? getMergedVille(villeSlug) : null
   if (!ville) return {}
 
   const title = `Formation HACCP ${ville.nom} (${ville.numDept}) — Hygiène Alimentaire 2026`
@@ -96,7 +109,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function VillePage({ params }: Props) {
   const { slug } = await params
-  const ville = getMergedVille(slug)
+  const villeSlug = villeSlugFrom(slug)
+  if (!villeSlug) notFound()
+  const ville = getMergedVille(villeSlug)
   if (!ville) notFound()
 
   const neighbors = getNeighborCities(ville)
