@@ -15,6 +15,9 @@ const FAQ = [
   { question: "Où trouver une formation HACCP dans le Nord ?", answer: "Des sessions sont organisées régulièrement à Lille, Roubaix, Tourcoing, Dunkerque, Valenciennes. Des formations en ligne sont également disponibles." },
   { question: "Quelle est la DRAAF compétente pour le Nord ?", answer: "Le département Nord (59) dépend de la DRAAF Hauts-de-France pour l&apos;agrément des organismes de formation en hygiène alimentaire." },
   { question: "Combien de restaurants sont concernés dans le Nord ?", answer: "Le département Nord compte environ 4 000 établissements de restauration commerciale soumis à l&apos;obligation de formation HACCP." },
+  { question: "Les estaminets et friteries du Nord sont-ils soumis à la formation HACCP ?", answer: "Oui, les estaminets, friteries et brasseries du Nord sont des établissements de restauration commerciale soumis à l&apos;obligation de formation HACCP. La densité de population et le nombre élevé d&apos;établissements génèrent une forte demande en formation dans la métropole lilloise." },
+  { question: "La formation HACCP est-elle disponible à Roubaix et Tourcoing ?", answer: "Oui, des sessions de formation HACCP sont régulièrement organisées dans toute la métropole lilloise, y compris à Roubaix et Tourcoing. Les contrôles sanitaires sont fréquents dans ces villes à forte densité de restauration." },
+  { question: "Le département du Nord est-il le plus contrôlé en matière d&apos;hygiène alimentaire ?", answer: "Le Nord, département le plus peuplé de France, fait l&apos;objet de nombreux contrôles DDPP proportionnels au nombre d&apos;établissements. Avec plus de 4 000 restaurants, la fréquence des inspections est parmi les plus élevées de France." },
 ]
 
 export default function Page() {
@@ -63,7 +66,7 @@ export default function Page() {
               <span className="text-2xl font-bold">Hygiène Alimentaire Obligatoire 2026</span>
             </h1>
             <p className="text-blue-100 text-base mb-5 leading-relaxed">
-              Le Nord, département le plus peuplé de France hors Paris, est une terre de convivialité culinaire. Estaminets, brasseries, friteries et restaurants de moules-frites : plus de 4 000 établissements sont soumis à la formation HACCP dans le département.
+              Le Nord, d&eacute;partement le plus peupl&eacute; de France avec Lille en t&ecirc;te, poss&egrave;de une culture culinaire forte autour des estaminets, moules-frites et restaurants traditionnels. La densit&eacute; de population et le nombre &eacute;lev&eacute; d&apos;&eacute;tablissements de restauration g&eacute;n&egrave;rent une forte demande en formation HACCP. Les contr&ocirc;les sanitaires sont fr&eacute;quents dans la m&eacute;tropole lilloise.
             </p>
             <div className="grid grid-cols-2 gap-3 text-sm">
               {[
@@ -106,6 +109,15 @@ export default function Page() {
                 <li><Link href="/formation-haccp-dunkerque" className="text-blue-600 hover:text-blue-800 font-medium underline">Dunkerque</Link></li>
                 <li><Link href="/formation-haccp-valenciennes" className="text-blue-600 hover:text-blue-800 font-medium underline">Valenciennes</Link></li>
           </ul>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 mb-4">
+            <a href="https://musmap.com/fr/restaurants/lille" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 font-medium px-5 py-3 rounded-xl hover:bg-green-100 transition-colors">
+              🗺️ Voir les restaurants &agrave; Lille sur MusMap
+            </a>
+            <Link href="/formation-haccp-hauts-de-france" className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-800 font-medium px-5 py-3 rounded-xl hover:bg-blue-100 transition-colors">
+              🏛️ Formation HACCP en Hauts-de-France (r&eacute;gion)
+            </Link>
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             {[

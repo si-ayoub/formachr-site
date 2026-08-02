@@ -78,13 +78,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!ville) return {}
 
   const title = `Formation HACCP ${ville.nom} (${ville.numDept}) — Hygiène Alimentaire 2026`
-  const desc = `Formation HACCP à ${ville.nom} (${ville.numDept}) dès 290€. 14h, attestation DRAAF, devis sous 24h. Financement OPCO possible.`
+  const desc = `Formation HACCP à ${ville.nom} (${ville.dept}, ${ville.region}) dès 290€. ${ville.nbRestaurantsEstime.toLocaleString("fr-FR")}+ restaurants concernés. 14h, attestation DRAAF, devis sous 24h. Financement OPCO possible.`
 
   return {
     title,
-    description: desc.slice(0, 155),
+    description: desc.slice(0, 160),
     alternates: { canonical: `${SITE_URL}/formation-haccp-${ville.slug}` },
-    openGraph: { title, description: desc, locale: "fr_FR" }
+    openGraph: {
+      title,
+      description: desc,
+      locale: "fr_FR",
+      type: "website",
+      images: [{ url: `${SITE_URL}/og-formation-haccp.png`, width: 1200, height: 630, alt: `Formation HACCP ${ville.nom}` }],
+    },
   }
 }
 

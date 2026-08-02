@@ -15,6 +15,9 @@ const FAQ = [
   { question: "Où trouver une formation HACCP dans le Gironde ?", answer: "Des sessions sont organisées régulièrement à Bordeaux, Mérignac, Pessac, Talence, Arcachon. Des formations en ligne sont également disponibles." },
   { question: "Quelle est la DRAAF compétente pour le Gironde ?", answer: "Le département Gironde (33) dépend de la DRAAF Nouvelle-Aquitaine pour l&apos;agrément des organismes de formation en hygiène alimentaire." },
   { question: "Combien de restaurants sont concernés dans le Gironde ?", answer: "Le département Gironde compte environ 3 000 établissements de restauration commerciale soumis à l&apos;obligation de formation HACCP." },
+  { question: "Les caves à vin et bars à vins bordelais sont-ils soumis à la formation HACCP ?", answer: "Les caves à vin et bars à vins qui servent des tapas ou des planches de charcuterie/fromage sont soumis à l&apos;obligation de formation HACCP. Le tourisme œnotouristique en Gironde amplifie les contrôles sanitaires dans ces établissements." },
+  { question: "La formation HACCP couvre-t-elle les spécificités des produits du bassin d&apos;Arcachon ?", answer: "La formation HACCP de 14 heures aborde les dangers liés aux produits de la mer, essentiels pour les ostréiculteurs et restaurateurs du bassin d&apos;Arcachon. La gestion de la chaîne du froid pour les huîtres et fruits de mer est un point clé du programme." },
+  { question: "Y a-t-il des formations HACCP spécifiques pour la restauration gastronomique à Bordeaux ?", answer: "La formation obligatoire de 14 heures est la même pour tous les types d&apos;établissements. Cependant, les restaurants gastronomiques bordelais, souvent associés aux grands crus, complètent cette formation par des modules sur l&apos;accord mets-vins et la traçabilité des produits premium." },
 ]
 
 export default function Page() {
@@ -63,7 +66,7 @@ export default function Page() {
               <span className="text-2xl font-bold">Hygiène Alimentaire Obligatoire 2026</span>
             </h1>
             <p className="text-blue-100 text-base mb-5 leading-relaxed">
-              La Gironde, département de Bordeaux et de ses prestigieux vignobles, est un territoire d&apos;excellence gastronomique. Avec le bassin d&apos;Arcachon, ses huîtres, ses vins et plus de 3 000 restaurants, la formation HACCP est incontournable pour les professionnels girondins.
+              La Gironde, d&eacute;partement du vin et de la gastronomie bordelaise, concentre une offre de restauration premium autour de Bordeaux. Les caves &agrave; vin, restaurants gastronomiques et bistrots bordelais sont soumis aux m&ecirc;mes obligations HACCP que tout &eacute;tablissement alimentaire. La proximit&eacute; des vignobles et le tourisme &oelig;notouristique amplifient les contr&ocirc;les sanitaires.
             </p>
             <div className="grid grid-cols-2 gap-3 text-sm">
               {[
@@ -104,8 +107,17 @@ export default function Page() {
                 <li><Link href="/formation-haccp-merignac" className="text-blue-600 hover:text-blue-800 font-medium underline">Mérignac</Link></li>
                 <li><Link href="/formation-haccp-pessac" className="text-blue-600 hover:text-blue-800 font-medium underline">Pessac</Link></li>
                 <li><Link href="/formation-haccp-talence" className="text-blue-600 hover:text-blue-800 font-medium underline">Talence</Link></li>
-                <li><Link href="/formation-haccp-arcachon" className="text-blue-600 hover:text-blue-800 font-medium underline">Arcachon</Link></li>
+                <li><Link href="/formation-haccp-libourne" className="text-blue-600 hover:text-blue-800 font-medium underline">Libourne</Link></li>
           </ul>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 mb-4">
+            <a href="https://musmap.com/fr/restaurants/bordeaux" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 font-medium px-5 py-3 rounded-xl hover:bg-green-100 transition-colors">
+              🗺️ Voir les restaurants &agrave; Bordeaux sur MusMap
+            </a>
+            <Link href="/formation-haccp-nouvelle-aquitaine" className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-800 font-medium px-5 py-3 rounded-xl hover:bg-blue-100 transition-colors">
+              🏛️ Formation HACCP en Nouvelle-Aquitaine (r&eacute;gion)
+            </Link>
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             {[

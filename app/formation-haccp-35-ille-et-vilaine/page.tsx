@@ -15,6 +15,9 @@ const FAQ = [
   { question: "Où trouver une formation HACCP dans le Ille-et-Vilaine ?", answer: "Des sessions sont organisées régulièrement à Rennes, Saint-Malo, Fougères, Vitré, Bruz. Des formations en ligne sont également disponibles." },
   { question: "Quelle est la DRAAF compétente pour le Ille-et-Vilaine ?", answer: "Le département Ille-et-Vilaine (35) dépend de la DRAAF Bretagne pour l&apos;agrément des organismes de formation en hygiène alimentaire." },
   { question: "Combien de restaurants sont concernés dans le Ille-et-Vilaine ?", answer: "Le département Ille-et-Vilaine compte environ 1 700 établissements de restauration commerciale soumis à l&apos;obligation de formation HACCP." },
+  { question: "Les crêperies bretonnes ont-elles des obligations HACCP spécifiques ?", answer: "Les crêperies sont soumises aux mêmes obligations HACCP que tout restaurant. La tradition agro-alimentaire bretonne et la manipulation de produits comme le blé noir, le beurre et les garnitures nécessitent une formation HACCP adaptée aux spécificités locales." },
+  { question: "La formation HACCP est-elle renforcée pour les restaurants de Saint-Malo en saison ?", answer: "L&apos;obligation de formation reste la même toute l&apos;année. Cependant, le tourisme côtier vers Saint-Malo amplifie la demande saisonnière en formation hygiène alimentaire, et les contrôles DDPP sont plus fréquents pendant la haute saison." },
+  { question: "Rennes propose-t-elle des formations HACCP chaque semaine ?", answer: "Oui, Rennes, capitale bretonne dynamique, dispose de plusieurs organismes agréés DRAAF Bretagne qui proposent des sessions de formation HACCP chaque semaine, en présentiel comme en ligne." },
 ]
 
 export default function Page() {
@@ -63,7 +66,7 @@ export default function Page() {
               <span className="text-2xl font-bold">Hygiène Alimentaire Obligatoire 2026</span>
             </h1>
             <p className="text-blue-100 text-base mb-5 leading-relaxed">
-              L&apos;Ille-et-Vilaine, avec Rennes comme préfecture et Saint-Malo comme joyau maritime, est le département breton le plus peuplé. Crêperies, restaurants de fruits de mer et bistrots : plus de 1 700 établissements sont soumis à la formation HACCP.
+              L&apos;Ille-et-Vilaine, avec Rennes capitale bretonne, b&eacute;n&eacute;ficie d&apos;un dynamisme &eacute;conomique fort. La tradition agro-alimentaire bretonne et la culture des cr&ecirc;peries imposent une formation HACCP adapt&eacute;e aux sp&eacute;cificit&eacute;s locales. Le tourisme c&ocirc;tier vers Saint-Malo amplifie la demande saisonni&egrave;re en formation hygi&egrave;ne alimentaire.
             </p>
             <div className="grid grid-cols-2 gap-3 text-sm">
               {[
@@ -102,10 +105,18 @@ export default function Page() {
           <ul className="grid md:grid-cols-2 gap-3 mb-8">
                 <li><Link href="/formation-haccp-rennes" className="text-blue-600 hover:text-blue-800 font-medium underline">Rennes</Link></li>
                 <li><Link href="/formation-haccp-saint-malo" className="text-blue-600 hover:text-blue-800 font-medium underline">Saint-Malo</Link></li>
-                <li><Link href="/formation-haccp-fougeres" className="text-blue-600 hover:text-blue-800 font-medium underline">Fougères</Link></li>
-                <li><Link href="/formation-haccp-vitre" className="text-blue-600 hover:text-blue-800 font-medium underline">Vitré</Link></li>
-                <li><Link href="/formation-haccp-bruz" className="text-blue-600 hover:text-blue-800 font-medium underline">Bruz</Link></li>
+                <li><Link href="/formation-haccp-fougeres" className="text-blue-600 hover:text-blue-800 font-medium underline">Foug&egrave;res</Link></li>
+                <li><Link href="/formation-haccp-vitre" className="text-blue-600 hover:text-blue-800 font-medium underline">Vitr&eacute;</Link></li>
           </ul>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 mb-4">
+            <a href="https://musmap.com/fr/restaurants/rennes" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 font-medium px-5 py-3 rounded-xl hover:bg-green-100 transition-colors">
+              🗺️ Voir les restaurants &agrave; Rennes sur MusMap
+            </a>
+            <Link href="/formation-haccp-bretagne" className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-800 font-medium px-5 py-3 rounded-xl hover:bg-blue-100 transition-colors">
+              🏛️ Formation HACCP en Bretagne (r&eacute;gion)
+            </Link>
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             {[

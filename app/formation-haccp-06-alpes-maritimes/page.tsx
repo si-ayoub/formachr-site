@@ -15,6 +15,9 @@ const FAQ = [
   { question: "Où trouver une formation HACCP dans le Alpes-Maritimes ?", answer: "Des sessions sont organisées régulièrement à Nice, Cannes, Antibes, Grasse, Menton. Des formations en ligne sont également disponibles." },
   { question: "Quelle est la DRAAF compétente pour le Alpes-Maritimes ?", answer: "Le département Alpes-Maritimes (06) dépend de la DRAAF PACA pour l&apos;agrément des organismes de formation en hygiène alimentaire." },
   { question: "Combien de restaurants sont concernés dans le Alpes-Maritimes ?", answer: "Le département Alpes-Maritimes compte environ 2 800 établissements de restauration commerciale soumis à l&apos;obligation de formation HACCP." },
+  { question: "Les contrôles sanitaires sont-ils renforcés pendant la saison estivale sur la Côte d&apos;Azur ?", answer: "Oui, la haute saison estivale multiplie par trois le nombre de couverts servis dans les Alpes-Maritimes. Les services de l&apos;État renforcent considérablement les contrôles sanitaires, notamment sur la Promenade des Anglais à Nice et le bord de mer à Cannes." },
+  { question: "Les restaurants de plage à Cannes et Nice sont-ils soumis à la formation HACCP ?", answer: "Oui, tous les restaurants de plage, paillotes et établissements saisonniers des Alpes-Maritimes sont soumis à l&apos;obligation de formation HACCP. La surveillance est accrue pendant les événements majeurs comme le Festival de Cannes." },
+  { question: "Faut-il renouveler la formation HACCP pour les restaurants saisonniers de la Côte d&apos;Azur ?", answer: "L&apos;attestation HACCP est valable à vie et ne nécessite pas de renouvellement. Cependant, pour les établissements saisonniers qui recrutent du nouveau personnel chaque année, il est recommandé de former les nouvelles recrues avant le début de la saison." },
 ]
 
 export default function Page() {
@@ -63,7 +66,7 @@ export default function Page() {
               <span className="text-2xl font-bold">Hygiène Alimentaire Obligatoire 2026</span>
             </h1>
             <p className="text-blue-100 text-base mb-5 leading-relaxed">
-              Les Alpes-Maritimes, joyau de la Côte d&apos;Azur, comptent plus de 2 800 établissements de restauration. De Nice à Cannes, de Menton à Antibes, la formation HACCP est indispensable dans ce département touristique de premier plan.
+              Les Alpes-Maritimes, avec Nice et Cannes, constituent un d&eacute;partement touristique de premier plan. La haute saison estivale multiplie par trois le nombre de couverts servis, rendant la ma&icirc;trise HACCP indispensable. Les restaurants de la Promenade des Anglais et du bord de mer font l&apos;objet d&apos;une surveillance accrue des services de l&apos;&Eacute;tat.
             </p>
             <div className="grid grid-cols-2 gap-3 text-sm">
               {[
@@ -101,11 +104,19 @@ export default function Page() {
           <h2 className="text-2xl font-bold mt-10 mb-6">Principales villes du Alpes-Maritimes pour la formation HACCP</h2>
           <ul className="grid md:grid-cols-2 gap-3 mb-8">
                 <li><Link href="/formation-haccp-nice" className="text-blue-600 hover:text-blue-800 font-medium underline">Nice</Link></li>
-                <li><Link href="/formation-haccp-cannes" className="text-blue-600 hover:text-blue-800 font-medium underline">Cannes</Link></li>
                 <li><Link href="/formation-haccp-antibes" className="text-blue-600 hover:text-blue-800 font-medium underline">Antibes</Link></li>
+                <li><Link href="/formation-haccp-cannes" className="text-blue-600 hover:text-blue-800 font-medium underline">Cannes</Link></li>
                 <li><Link href="/formation-haccp-grasse" className="text-blue-600 hover:text-blue-800 font-medium underline">Grasse</Link></li>
-                <li><Link href="/formation-haccp-menton" className="text-blue-600 hover:text-blue-800 font-medium underline">Menton</Link></li>
           </ul>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 mb-4">
+            <a href="https://musmap.com/fr/restaurants/nice" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 font-medium px-5 py-3 rounded-xl hover:bg-green-100 transition-colors">
+              🗺️ Voir les restaurants &agrave; Nice sur MusMap
+            </a>
+            <Link href="/formation-haccp-provence-alpes-cote-d-azur" className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-800 font-medium px-5 py-3 rounded-xl hover:bg-blue-100 transition-colors">
+              🏛️ Formation HACCP en PACA (r&eacute;gion)
+            </Link>
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             {[

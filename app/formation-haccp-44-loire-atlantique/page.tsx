@@ -15,6 +15,9 @@ const FAQ = [
   { question: "Où trouver une formation HACCP dans le Loire-Atlantique ?", answer: "Des sessions sont organisées régulièrement à Nantes, Saint-Nazaire, Rezé, Saint-Herblain, Orvault. Des formations en ligne sont également disponibles." },
   { question: "Quelle est la DRAAF compétente pour le Loire-Atlantique ?", answer: "Le département Loire-Atlantique (44) dépend de la DRAAF Pays de la Loire pour l&apos;agrément des organismes de formation en hygiène alimentaire." },
   { question: "Combien de restaurants sont concernés dans le Loire-Atlantique ?", answer: "Le département Loire-Atlantique compte environ 2 200 établissements de restauration commerciale soumis à l&apos;obligation de formation HACCP." },
+  { question: "Les restaurants de produits de la mer à Saint-Nazaire ont-ils des obligations HACCP spécifiques ?", answer: "Les restaurants de produits de la mer sont soumis aux mêmes obligations HACCP que les autres établissements. Cependant, le port de Saint-Nazaire et la proximité atlantique imposent des règles strictes sur la chaîne du froid et la traçabilité des produits de la mer." },
+  { question: "Un nouveau restaurant à Nantes doit-il former son personnel avant l&apos;ouverture ?", answer: "Oui, l&apos;obligation de formation HACCP s&apos;applique dès l&apos;ouverture de l&apos;établissement. Nantes, ville étudiante dynamique, voit émerger de nombreux nouveaux restaurants chaque année, tous soumis à cette obligation dès le premier jour d&apos;activité." },
+  { question: "La formation HACCP est-elle disponible à Saint-Nazaire ?", answer: "Oui, des sessions de formation HACCP sont organisées régulièrement à Saint-Nazaire, en plus de Nantes. Les professionnels de la restauration de la côte atlantique (La Baule, Pornic) peuvent également y accéder facilement." },
 ]
 
 export default function Page() {
@@ -63,7 +66,7 @@ export default function Page() {
               <span className="text-2xl font-bold">Hygiène Alimentaire Obligatoire 2026</span>
             </h1>
             <p className="text-blue-100 text-base mb-5 leading-relaxed">
-              La Loire-Atlantique, avec Nantes comme métropole, est un département dynamique de l&apos;Ouest français. Entre l&apos;estuaire de la Loire et l&apos;océan Atlantique, le département compte plus de 2 200 restaurants soumis à l&apos;obligation de formation HACCP.
+              La Loire-Atlantique, avec Nantes comme m&eacute;tropole dynamique, offre un tissu restauration vari&eacute;. Le port de Saint-Nazaire et la proximit&eacute; atlantique imposent des r&egrave;gles strictes sur les produits de la mer. Nantes, ville &eacute;tudiante, voit &eacute;merger de nombreux nouveaux restaurants soumis &agrave; l&apos;obligation de formation HACCP d&egrave;s l&apos;ouverture.
             </p>
             <div className="grid grid-cols-2 gap-3 text-sm">
               {[
@@ -104,8 +107,16 @@ export default function Page() {
                 <li><Link href="/formation-haccp-saint-nazaire" className="text-blue-600 hover:text-blue-800 font-medium underline">Saint-Nazaire</Link></li>
                 <li><Link href="/formation-haccp-reze" className="text-blue-600 hover:text-blue-800 font-medium underline">Rezé</Link></li>
                 <li><Link href="/formation-haccp-saint-herblain" className="text-blue-600 hover:text-blue-800 font-medium underline">Saint-Herblain</Link></li>
-                <li><Link href="/formation-haccp-orvault" className="text-blue-600 hover:text-blue-800 font-medium underline">Orvault</Link></li>
           </ul>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 mb-4">
+            <a href="https://musmap.com/fr/restaurants/nantes" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 font-medium px-5 py-3 rounded-xl hover:bg-green-100 transition-colors">
+              🗺️ Voir les restaurants &agrave; Nantes sur MusMap
+            </a>
+            <Link href="/formation-haccp-pays-de-la-loire" className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-800 font-medium px-5 py-3 rounded-xl hover:bg-blue-100 transition-colors">
+              🏛️ Formation HACCP en Pays de la Loire (r&eacute;gion)
+            </Link>
+          </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             {[
