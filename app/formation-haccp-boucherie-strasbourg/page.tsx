@@ -22,7 +22,7 @@ export default function Page() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb([
         { name: "Accueil", url: "/" },
-        { name: "Formation HACCP Boucherie", url: "/formation-haccp-boucherie" },
+        { name: "Formation HACCP Boucherie", url: "/formation-haccp-boucherie-charcuterie" },
         { name: "Formation HACCP Boucherie Strasbourg", url: "/formation-haccp-boucherie-strasbourg" }
       ])) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaCourse({
@@ -45,7 +45,7 @@ export default function Page() {
         <ol className="flex items-center gap-2 flex-wrap">
           <li><Link href="/" className="hover:text-blue-600">Accueil</Link></li>
           <li>›</li>
-          <li><Link href="/formation-haccp-boucherie" className="hover:text-blue-600">Boucherie</Link></li>
+          <li><Link href="/formation-haccp-boucherie-charcuterie" className="hover:text-blue-600">Boucherie</Link></li>
           <li>›</li>
           <li className="text-gray-800 font-medium">Boucherie à Strasbourg</li>
         </ol>
